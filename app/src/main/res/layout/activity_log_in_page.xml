@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/signUpPage"
-    tools:context=".MainActivity2">
+    tools:context=".LogInPage">
 
     <LinearLayout
         android:layout_width="350dp"
@@ -33,7 +32,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Let's Get Started"
+                android:text="Let's Get Started!"
                 android:textColor="@color/white"
                 android:textSize="32dp"
                 android:textStyle="bold"/>
@@ -43,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Sign Up to Explore Our Products...."
+                android:text="Log In to Explore Our Products...."
                 android:textColor="@color/white" />
 
             <LinearLayout
@@ -107,10 +106,10 @@
 
                 <Button
                     android:layout_marginTop="45dp"
-                    android:id="@+id/signUpBt"
+                    android:id="@+id/logInBt"
                     android:layout_width="125dp"
                     android:layout_height="wrap_content"
-                    android:text="Sign Up"
+                    android:text="Log In"
                     android:elevation="10dp"
                     android:backgroundTint="#4F8D2B"/>
 
@@ -126,20 +125,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="Already Registered?"
+                        android:text="Not Registered?"
                         android:textColor="@color/white"
                         android:textSize="15dp"
                         tools:ignore="TextSizeCheck" />
 
                     <TextView
-                        android:id="@+id/loginRedirect"
+                        android:id="@+id/signUpRedirect"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
                         android:gravity="left"
                         android:textColor="#0000ff"
                         android:layout_marginLeft="6dp"
-                        android:text="Log in Here" />
+                        android:text="Sign Up Here" />
                 </LinearLayout>
 
             </LinearLayout>
