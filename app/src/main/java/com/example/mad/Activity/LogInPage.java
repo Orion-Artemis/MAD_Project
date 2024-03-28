@@ -1,4 +1,4 @@
-package com.example.mad;
+package com.example.mad.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -41,7 +42,7 @@ public class LogInPage extends AppCompatActivity {
                 String cred = pass.getText().toString().trim();
                 String num = phone.getText().toString().trim();
                 String mail = email.getText().toString().trim();
-                Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                Intent intent = new Intent(getApplicationContext(), HeroPage.class);
                 Bundle bundle = new Bundle();
 
                 if (user.isEmpty() || cred.isEmpty() || num.isEmpty() || mail.isEmpty()){

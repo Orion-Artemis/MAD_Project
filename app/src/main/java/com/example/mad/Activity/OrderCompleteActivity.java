@@ -1,13 +1,16 @@
-package com.example.mad;
+package com.example.mad.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-public class ProductPage extends AppCompatActivity {
+import com.example.mad.R;
+
+public class OrderCompleteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_page);
+        setContentView(R.layout.activity_order_complete);
     }
 }

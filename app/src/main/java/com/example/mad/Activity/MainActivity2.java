@@ -1,22 +1,19 @@
-package com.example.mad;
+package com.example.mad.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.transition.Fade;
-import android.transition.TransitionManager;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.mad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -48,15 +45,20 @@ public class MainActivity2 extends AppCompatActivity {
                 String cred = pass.getText().toString().trim();
                 String num = phone.getText().toString().trim();
                 String mail = email.getText().toString().trim();
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(getApplicationContext(), HeroPage.class);
 
                 if (user.isEmpty() || cred.isEmpty() || num.isEmpty() || mail.isEmpty()){
                     Toast.makeText(MainActivity2.this,"Please Enter all Credentials",Toast.LENGTH_SHORT).show();
                 } else {
-                    mAuth.signInWithEmailAndPassword(mail , cred).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    mAuth.createUserWithEmailAndPassword(mail , cred).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(MainActivity2.this, "SignUp Successful", Toast.LENGTH_SHORT).show();
+                                bundle.putString("Name",cred);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(MainActivity2.this, "SignUp Failed Try Again", Toast.LENGTH_SHORT).show();
                             }
@@ -72,13 +74,12 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            startActivity(new Intent(MainActivity2.this, MainActivity.class));
+            startActivity(new Intent(MainActivity2.this, HeroPage.class));
             finish();
         }
     }
