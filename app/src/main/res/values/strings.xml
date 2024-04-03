@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MAD</string>
+    <string name="google_maps_key" translatable="false">AIzaSyB68KmwfsRvia_wR6MmcJs2pFI3lydUuL8</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

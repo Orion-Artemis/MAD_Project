@@ -54,6 +54,12 @@ public class CartActivity extends AppCompatActivity {
             binding.emptyTxt.setVisibility(View.GONE);
             binding.scrollCart.setVisibility(View.VISIBLE);
         }
+        binding.locFinder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, MapsActivity.class));
+            }
+        });
         binding.cartView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         binding.cartView.setAdapter(new CartAdapter(managmentCart.getListCart(), () -> calculatorCart()));
     }

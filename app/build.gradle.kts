@@ -3,6 +3,7 @@ import com.android.build.api.dsl.BuildFeatures
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -33,6 +34,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     buildFeatures{
+        viewBinding = true
         viewBinding {
             enable = true
         };
@@ -53,4 +55,11 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+    implementation("com.google.android.libraries.places:places:3.4.0")
+    implementation("com.google.android.gms:play-services-places:18.2.0")
+    implementation("com.google.android.libraries.places:places:3.4.0")
+
+
 }
